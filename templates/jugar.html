@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Espermatozoide Perdido</title>
+  <style>
+    body {
+      background-color: #fff8f8;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    canvas {
+      border: 3px solid #ffb6c1;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container"></div>
+
+  <!-- Importar Pygame.js -->
+  <script src="https://cdn.jsdelivr.net/npm/pygamejs@0.2.0/dist/pygame.min.js"></script>
+  
+  <script>
+    var config = {
+      type: Phaser.AUTO,
+      width: 990,
+      height: 750,
+      parent: 'game-container',
+      scene: {
+        preload: preload,
+        create: create,
+        update: update
+      }
+    };
+
+    var game = new Phaser.Game(config);
+    var sperm;
+    var meta;
+    var vidas = 3;
+    var velocidad = 2.5;
+
+    function preload() {
+      // Cargar imágenes para el juego
+      this.load.image('fondo', 'path_to_background_image.png'); // Fondo
+      this.load.image('sperm', 'path_to_sperm_image.png'); // Espermatozoide
+      this.load.image('meta', 'path_to_egg_image.png'); // Óvulo
+    }
+
+    function create() {
+      // Fondo
+      this.add.image(495, 375, 'fondo');
+
+      // Crear espermatozoide
+      sperm = this.physics.add.image(50, 50, 'sperm').setScale(0.1);
+
+      // Crear meta (óvulo)
+      meta = this.add.image(940, 700, 'meta').setScale(0.1);
+
+      // Configurar controles del espermatozoide
+      this.input.keyboard.on('keydown', function(event) {
+        if (event.key === 'ArrowLeft') sperm.x -= velocidad;
+        if (event.key === 'ArrowRight') sperm.x += velocidad;
+        if (event.key === 'ArrowUp') sperm.y -= velocidad;
+        if (event.key === 'ArrowDown') sperm.y += velocidad;
+      });
+    }
+
+    function update() {
+      // Verificar si el espermatozoide ha llegado a la meta
+      if (Phaser.Geom.Intersects.RectangleToRectangle(sperm.getBounds(), meta.getBounds())) {
+        alert("¡Fertilización exitosa!");
+      }
+
+      // Si no quedan vidas
+      if (vidas <= 0) {
+        alert("¡Te quedaste sin vidas!");
+        game.destroy(true);
+      }
+    }
+  </script>
+</body>
+</html>

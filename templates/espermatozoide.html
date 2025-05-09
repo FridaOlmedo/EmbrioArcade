@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Espermatozoide Perdido</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .loading {
+            font-size: 24px;
+            margin: 20px;
+        }
+        canvas {
+            border: 3px solid #ffb6c1;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🧬 El Espermatozoide Perdido - Muros Anchos</h1>
+        <canvas id="gameCanvas" width="990" height="750"></canvas>
+        <div id="loading" class="loading">Cargando recursos...</div>
+    </div>
+
+    <script src="/static/sperm_game.js"></script>
+    <script>
+        // Iniciar el juego cuando la página se carga
+        document.addEventListener('DOMContentLoaded', function() {
+            iniciarJuegoEspermatozoide();
+        });
+    </script>
+</body>
+</html>
