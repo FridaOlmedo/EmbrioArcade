@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Minijuegos de Embriología</h2>
+<p class="intro">Explora los siguientes minijuegos educativos desarrollados con Pygame:</p>
+
+<div class="games-grid">
+    <div class="game-card">
+        <h3>🧬 El Espermatozoide Perdido</h3>
+        <p>Ayuda al espermatozoide a encontrar el óvulo en un laberinto complejo.</p>
+        
+        <!-- Aquí añadimos el iframe para el juego -->
+        <button onclick="location.href='/jugar'">Jugar</button>
+    </div>
+    <div class="game-card">
+        <h3>🧫 La División Celular</h3>
+        <p>Aprende cómo se forman las primeras células del embrión jugando.</p>
+        <button onclick="alert('Este juego se lanzará pronto en Pygame.')">Jugar</button>
+    </div>
+    <div class="game-card">
+        <h3>🧠 El Cerebro en Desarrollo</h3>
+        <p>Forma conexiones neuronales y acompaña el desarrollo del sistema nervioso.</p>
+        <button onclick="alert('Este juego se lanzará pronto en Pygame.')">Jugar</button>
+    </div>
+</div>
+{% endblock %}

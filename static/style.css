@@ -1,0 +1,85 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #e6ccff;  /* Morado muy claro */
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    color: #5e4b8b; /* Morado más oscuro para contraste */
+}
+
+main {
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.intro {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.games-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.game-card {
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    color: #333;
+}
+
+/* Colores pastel para cada tarjeta de juego */
+.game-card:nth-child(1) {
+    background-color: #ffe0e9;  /* Rosa pastel */
+    border: 2px solid #ffc2d1;
+}
+
+.game-card:nth-child(2) {
+    background-color: #d0f4de;  /* Verde menta pastel */
+    border: 2px solid #b5ead7;
+}
+
+/* Puedes agregar más colores si agregas más tarjetas */
+.game-card:nth-child(3) {
+    background-color: #fff3b0;  /* Amarillo pastel */
+    border: 2px solid #ffebb5;
+}
+
+.game-card h3 {
+    color: #444;
+}
+
+button {
+    background-color: #caf0f8;  /* Azul pastel suave */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #ade8f4;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f0ff;
+    margin-top: 40px;
+}
