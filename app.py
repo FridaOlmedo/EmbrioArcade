@@ -12,7 +12,7 @@ def jugar():
 
 @app.route('/espermatozoide')
 def espermatozoide():
-    return render_template('templates/espermatozoide.html')
+    return render_template('espermatozoide.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
